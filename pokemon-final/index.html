@@ -5,18 +5,28 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Build Your Own Pokemon Team</title>
+    <link rel="stylesheet" href="style.css">
   </head>
   <body>
     <div id="app"></div>
     <h1>Build Your Own Pokemon Team</h1>
     <button id="addPokemon">Add</button>
     <button id="removePokemon">Remove</button>
-    <button id="sort">Sort by Base EXP</button>
+    <!-- <button id="sort">Sort by Base EXP</button> -->
+    <label for="sort">Sort by: </label>
+    <select id="sort">
+      <option value="none"></option>
+      <option value="az">A-Z</option>
+      <option value="za">Z-A</option>
+      <option value="lowEXP">Lowest EXP</option>
+      <option value="highEXP">Highest EXP</option>
+    </select>
     <label for="filter">Filter by Type: </label>
     <select id="filter">
       <option value="all">Show All</option>
     </select>
-    <p>Your Team:</p>
+    <p id="message"></p>
+    <h2>Your Team:</h2>
     <div id="team"></div>
     <script type="module" src="/main.js"></script>
   </body>

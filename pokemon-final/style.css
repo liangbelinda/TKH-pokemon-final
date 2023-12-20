@@ -1,4 +1,4 @@
-:root {
+/* :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
@@ -93,4 +93,11 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+} */
+
+.pokemon {
+  border-style: ridge;
+  border-radius: 25px;
+  padding: 20px;
+  margin: 10px 35%;
 }
