@@ -1,6 +1,6 @@
 import displayPokemons from "./displayPokemons.js";
 
-//take in pokemonTeam, an array of pokemon objects, as a paramter and sort by alphabetical order, reverse alphabetical order, lowest base EXP, and highest base EXP
+//take in pokemonTeam, an array of pokemon objects, as a parameter and sort by alphabetical order, reverse alphabetical order, lowest base EXP, or highest base EXP
 export default function sort(pokemonTeam) {
     const sortOption = document.getElementById("sort").value;
     //sort by alphabetical order

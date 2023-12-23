@@ -1,4 +1,4 @@
-//takes in pokemonTeam, an array of pokemon objects, as a parameter and using DOM displays onto screen
+//takes in pokemonTeam, an array of pokemon objects, as a parameter and using DOM displays Pokemon image, name, and base EXP onto screen
 export default function displayPokemons(pokemonTeam) {
     const pokemonList = document.getElementById("team");
     pokemonList.innerText = "";
@@ -8,7 +8,7 @@ export default function displayPokemons(pokemonTeam) {
         text.innerText = "You have no Pokemons on your team.";
         pokemonList.append(text);
     }
-    //for every pokemon in array, display the pokemon image, name, and base EXP
+    //for every pokemon in array, display the pokemon image, name, and base
     pokemonTeam.forEach((pokemon) => {
         const pokemonDiv = document.createElement("div");
         pokemonDiv.className = `pokemon inactive ${pokemon.type}`;
