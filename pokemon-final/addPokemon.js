@@ -1,6 +1,7 @@
 import fetchData from "./fetchPokemonAPI.js";
 import displayPokemons from "./displayPokemons.js";
 
+//adds pokemon that user inputs to pokemonTeam, which is an array of pokemon objects
 export default async function addPokemon(pokemonTeam) {
     const userInput = prompt('Name of Pokemon:');
     if (pokemonTeam.find((pokemon) => pokemon.name === userInput.toLowerCase())){
@@ -9,6 +10,7 @@ export default async function addPokemon(pokemonTeam) {
         const data = await fetchData(userInput.toLowerCase());
         const pokemonType = data.types["0"].type.name;
         
+        //if pokemon type does not exist in pokemon array, add type to the list of options to filter by
         let typeExist = false;
         if (pokemonTeam.find((pokemon) => pokemon.type === pokemonType)){
             typeExist = true;
@@ -21,6 +23,7 @@ export default async function addPokemon(pokemonTeam) {
             filterSelect.append(typeOption);
         }
         
+        //add pokemon info as an object to the pokemonTeam array
         const pokemonObj = {name: data.name,
                             img: data.sprites.front_default,
                             base_exp: data.base_experience,

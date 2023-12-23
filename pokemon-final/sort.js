@@ -1,7 +1,9 @@
 import displayPokemons from "./displayPokemons.js";
 
+//take in pokemonTeam, an array of pokemon objects, as a paramter and sort by alphabetical order, reverse alphabetical order, lowest base EXP, and highest base EXP
 export default function sort(pokemonTeam) {
     const sortOption = document.getElementById("sort").value;
+    //sort by alphabetical order
     if (sortOption === "az") {
         pokemonTeam.sort(function(a, b){
             if (a.name < b.name) {
@@ -12,6 +14,7 @@ export default function sort(pokemonTeam) {
                 return 0;
             }
         })
+    //sort by reverse alphabetical order
     } else if (sortOption === "za"){
         pokemonTeam.sort(function(a, b){
             if (a.name < b.name) {
@@ -22,10 +25,12 @@ export default function sort(pokemonTeam) {
                 return 0;
             }
         })
+    //sort by lowest base EXP
     } else if (sortOption === "lowEXP"){
         pokemonTeam.sort(function(a, b){
             return a.base_exp - b.base_exp;
         })
+    //sort by highest base EXP
     } else if (sortOption === "highEXP"){
         pokemonTeam.sort(function(a, b){
             return b.base_exp - a.base_exp;
@@ -33,9 +38,5 @@ export default function sort(pokemonTeam) {
     } else {
         displayPokemons(pokemonTeam);
     }
-
-//     pokemonTeam.sort(function(a, b) {
-//       return a.base_exp - b.base_exp;
-//     });
     displayPokemons(pokemonTeam);
 }
